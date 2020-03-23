@@ -78,8 +78,12 @@ def generate_setup_compiler(file_path):
     src_dir = os.path.join(config.src, "")
     # 获取项目的层次结构
     child_dir_list = base_dir.split(src_dir)
+    # 如果切分列表长度大于1，则含有子目录
     if child_dir_list.__len__() >= 2:
         child_dir = child_dir_list[1]
+    # 不包含子目录
+    elif child_dir_list.__len__() == 1 and child_dir_list[0] in src_dir:
+        child_dir = "."
     else:
         return
     build_path = os.path.join(config.destination, child_dir)
