@@ -15,6 +15,8 @@ exclude = ["venv", "__pycache__", ".idea", "data"]
 build_file_suffix = [".py"]
 # 删除中间文件
 middle_suffix = [".c", ".o"]
+# python版本
+python_version = 3
 # 源文件夹
 src = "/home/chase/cython/test"
 # 编译目标文件夹

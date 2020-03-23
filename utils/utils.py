@@ -84,7 +84,7 @@ def generate_setup_compiler(file_path):
         return
     build_path = os.path.join(config.destination, child_dir)
     setup(
-            ext_modules=cythonize(file_path),
+            ext_modules=cythonize(file_path, language_level=config.python_version),
             script_args=[
                 "build_ext",
                 "-b", build_path,
