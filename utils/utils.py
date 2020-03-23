@@ -77,11 +77,11 @@ def generate_setup_compiler(file_path):
     # 转义路径，防止不同系统上不匹配的问题
     src_dir = os.path.join(config.src, "")
     # 获取项目的层次结构
-    child_dir_ist = base_dir.split(src_dir)
+    child_dir_list = base_dir.split(src_dir)
     if child_dir_list.__len__() >= 2:
-          child_dir = child_dir_list[1]
+        child_dir = child_dir_list[1]
     else:
-          return
+        return
     build_path = os.path.join(config.destination, child_dir)
     setup(
             ext_modules=cythonize(file_path),

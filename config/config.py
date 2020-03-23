@@ -16,8 +16,8 @@ build_file_suffix = [".py"]
 # 删除中间文件
 middle_suffix = [".c", ".o"]
 # 源文件夹
-src = "E:\\PyCharm Project\\pytorch"
+src = "/home/chase/cython/test"
 # 编译目标文件夹
-destination = "E:\\PyCharm Project\\pytorch\\build"
+destination = "/home/chase/cython/test/build"
 # 缓存文件夹
-temp = "E:\\PyCharm Project\\pytorch\\temp"
+temp = "/home/chase/cython/test/temp"
