@@ -116,7 +116,13 @@ def get_py_list_from_path(root_dir):
             get_py_list_from_path(child_path)
         # 获取文件的后缀名
         build_file_suffix = os.path.splitext(dir_or_file_name)[-1]
+        build_file_name = os.path.splitext(dir_or_file_name)[0]
         # 判断是否需要编译
         if build_file_suffix in config.build_file_suffix:
-            __py_file_list.append(child_path)
+            # 判断是否是__init__.py文件
+            if build_file_name != "__init__":
+                __py_file_list.append(child_path)
+            # 是就删除该文件
+            else:
+                os.remove(child_path)
     return __py_file_list
